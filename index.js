@@ -3,11 +3,14 @@ window.addEventListener('load', () =>{
     const form =  document.querySelector("#task_form")
     const input = document.querySelector("#task_Input")
     const listEl = document.querySelector("#task")
+    const database = firebase.database()
 
     form.addEventListener('submit' ,(e) =>{
         e.preventDefault()
 
         const task = input.value;
+        
+        database.ref(task);
 
         if (!task){
             alert('Please fill out task')
